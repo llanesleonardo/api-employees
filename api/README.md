@@ -323,8 +323,10 @@ $ npm install @types/node --save-dev
 
 Install a typeORM database driver
 
+```bash
 MySQL npm install mysql2 --save
 MongoDB npm install mongodb@^3.6.0 --save
+```
 
 Basic CRUD Example :
 
@@ -350,10 +352,10 @@ Basic CRUD Example :
 
 # Bugs and feature requests
 
-Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/alejandrogalaz21/js-babel-node/pulls) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/alejandrogalaz21/js-babel-node/issues).
+Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/llanesleonardo/api-employees/pulls) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/llanesleonardo/api-employees/issues).
 
 # [](https://github.com/pranavms13/whatsapp-node-api#legal)📃 Legal
 
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly prohibited.**
 
-## Thanks 👋
+## Thanks
