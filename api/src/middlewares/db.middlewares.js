@@ -1,4 +1,4 @@
-import { responseFormat } from '@helpers/responseHelper'
+import { responseFormat } from '@helpers/format.helpers'
 import { show } from '@services/employees.services'
 
 export async function isValidId(id) {

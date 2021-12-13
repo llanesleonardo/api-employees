@@ -1,11 +1,12 @@
 import { getRepository, getConnection } from 'typeorm'
+import { Employee } from '../entity/Employee'
 /**
  * @getPhotoRepository get a specific repositor, similar to use a specific schema or table in the database
  */
 
 function getPhotoRepository() {
   try {
-    return getConnection().getRepository('Employee')
+    return getConnection().getRepository(Employee)
   } catch (e) {}
 }
 
@@ -43,20 +44,21 @@ export async function store(
   urlPhoto
 ) {
   try {
-    let payload = {
-      name,
-      lastname,
-      email,
-      department,
-      position,
-      creationDate,
-      modificationDate,
-      mobile,
-      active,
-      urlPhoto
-    }
-    let photo = await getPhotoRepository().create(payload)
-    return await getPhotoRepository().save(photo)
+    const employee = new Employee()
+
+    ;(employee.name = name),
+      (employee.lastname = lastname),
+      (employee.email = email),
+      (employee.department = department),
+      (employee.position = position),
+      (employee.creationDate = creationDate),
+      (employee.modificationDate = modificationDate),
+      (employee.mobile = mobile),
+      (employee.active = active),
+      (employee.urlPhoto = urlPhoto)
+
+    // let photo = await getPhotoRepository().create(payload)
+    return await getPhotoRepository().save(employee)
   } catch (e) {}
 }
 /**

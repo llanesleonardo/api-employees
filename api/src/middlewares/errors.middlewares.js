@@ -1,5 +1,5 @@
 import { validationResult } from 'express-validator'
-import { responseFormat } from '../helpers/responseHelper'
+import { responseFormat } from '@helpers/format.helpers'
 
 export function errorsValidation(req, res, next) {
   const errors = validationResult(req) // Finds the validation errors in this request and wraps them in an object with handy functions

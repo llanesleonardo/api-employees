@@ -11,14 +11,14 @@
  * @logging file that contains all the warnings, errors, queries, schema build process, info, logs
  */
 
-export default {
+module.exports = {
   type: 'mysql',
   host: 'localhost' || process.env.MYSQL_HOST,
   port: 3306 || process.env.MYSQL_PORT,
-  username: 'usere' || process.env.MYSQL_USER,
-  password: 'userp' || process.env.MYSQL_PASSWORD,
+  username: 'root' || process.env.MYSQL_USER,
+  password: 'test123' || process.env.MYSQL_PASSWORD,
   database: 'employees' || process.env.MYSQL_DATABASE,
-  entities: ['src/entity/**/*.js'],
+  entities: ['dist/entity/*.js'],
   synchronize: true,
   logging: true
 }

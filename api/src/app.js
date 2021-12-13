@@ -6,7 +6,7 @@ import cors from 'cors' // This npm module import cors - CORS is a node.js packa
 import compression from 'compression' // This npm module import compression - The following compression codings are supported  deflate gzip
 import rootPath from 'app-root-path' //  This npm module import rootPath - This simple module helps you access your application's root path from anywhere in the application without resorting to relative paths like require("../../path")
 import router from './router' // This npm module import custom module router
-import { errorHandler } from './middleware/apiErrors'
+import { errorHandler } from '@middlewares/errors.middlewares'
 
 const appRootPath = rootPath.toString() // creat a constant rootPath and covert it to String to access any where the root path of your project
 const app = express() // Create express instance's
@@ -31,5 +31,5 @@ app.get('/', (_, res) => res.sendFile('public', 'index.html')) // static routes 
 
 app.use(router) // use router file
 
-app.use(errorHandler) // use custom middleware to handle errors - always at the end of the apps.use middleware
+//app.use(errorHandler) // use custom middleware to handle errors - always at the end of the apps.use middleware
 export default app

@@ -1,47 +1,34 @@
- import {EntitySchema} from "typeorm";
- import {Employee} from "@model/Employee";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToMany,
+  JoinTable
+} from 'typeorm'
 
-module.exports = new EntitySchema({
-    name: "Employee",
-    target: Employee,
-    columns: {
-        id: {
-            primary: true,
-            type: "int",
-            generated: true
-        },
-        name: {
-            type: "varchar"
-        },
-        lastname: {
-            type: "varchar"
-        },
-        email: {
-            type: "varchar"
-        },
-        department: {
-            type: "int"
-        },
-        position: {
-            type: "int"
-        },
-        creationDate: {
-            type: "varchar"
-        },
-        modificationDate: {
-            type: "varchar"
-        },
-        mobile: {
-            type: "varchar"
-        }
-        active: {
-            type: "boolean"
-        }
-        urlPhoto: {
-            type: "varchar"
-        }
-    }
-});
+@Entity()
+export class Employee {
+  @PrimaryGeneratedColumn()
+  id = undefined
 
-
-
+  @Column('varchar')
+  name = ''
+  @Column('varchar')
+  lastname = ''
+  @Column('varchar')
+  email = ''
+  @Column('varchar')
+  department = ''
+  @Column('varchar')
+  position = ''
+  @Column('varchar')
+  creationDate = ''
+  @Column('varchar')
+  modificationDate = ''
+  @Column('varchar')
+  mobile = ''
+  @Column('boolean')
+  active = ''
+  @Column('varchar')
+  urlPhoto = ''
+}

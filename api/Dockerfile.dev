@@ -1,11 +1,14 @@
-# Specify a base image
-FROM node:alpine
-WORKDIR '/opt/api'
-# Copy only package.json and yarn.lock for cache
-COPY package*.json ./
-# Install some depenendencies
+#Specify a base image lts long term 
+FROM node:lts-alpine
+#Start process node / api
+WORKDIR '/opt/app/api_employeees'
+#copy dependencies  from client to wordir
+COPY './package*.json' '.'
+#Install modules
 RUN npm install
-# Copies everything over to Docker environment
-COPY . .
-# Finally runs the application
-CMD [ "npm", "run", "start" ]
+#Copy files
+COPY '.' '.'
+#construir build
+RUN npm run build
+#Default command
+CMD ["npm","run","prod"]

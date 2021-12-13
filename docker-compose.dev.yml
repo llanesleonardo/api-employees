@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql_for_api_employees
+    volumes:
+      - ./db_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE:
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+      MYSQL_PORT:
+
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin:latest
+    container_name: phpmyadmin_for_mysql_for_api_employees
+    restart: always
+    ports:
+      - 8082:8082
+    environment:
+      PMA_HOST: db
+      UPLOAD_LIMIT: 1024M
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_PASSWORD:
+
+  api:
+    depends_on:
+      - db
+    build:
+      context: ./api
+      dockerfile: Dockerfile.dev
+    container_name: api_for_employees
+    volumes:
+      - '/opt/app/api/node_modules'
+      - './api:/opt/app/api'
+    ports:
+      - 5000:5000
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE:
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+      PORT:
+      MYSQL_HOST: db

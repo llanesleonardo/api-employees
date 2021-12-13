@@ -4,7 +4,7 @@ import {
   postValidations,
   putValidations,
   dbValidations
-} from '@validations/validations'
+} from '@validations/actions.validations'
 import { errorsValidation } from '@middlewares/errors.middlewares'
 
 const router = Router()

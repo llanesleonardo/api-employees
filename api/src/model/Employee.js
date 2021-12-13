@@ -1,5 +1,4 @@
-/*export */
-class Employee {
+/*export */ class Employee_old {
   constructor(
     id,
     name,
@@ -28,5 +27,5 @@ class Employee {
 }
 
 module.exports = {
-  Employee: Employee
+  Employee_old: Employee_old
 }
