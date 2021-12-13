@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/llanesleonardo/api-employees/issues"
   },
-  "homepage": "https://github.com/llanesleonardo/api-empleados#readme"
+  "homepage": "https://github.com/llanesleonardo/api-empleados#readme",
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
 }

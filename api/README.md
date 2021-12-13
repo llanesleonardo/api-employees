@@ -90,12 +90,17 @@ A list of technologies used within the project:
     <img src="	https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white" /> 
     <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" /> 
     <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" />
+    <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" />
+    <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white" />
+    <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white" />
+    <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" />
+    <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" />
   </p>
 
 Requiriments:
 
-[![node.js](https://img.shields.io/badge/node.js-v14.15.4-<COLOR>)](https://nodejs.org/es/)
-[![node.js](https://img.shields.io/badge/mongodb-v4.2-<COLOR>)](https://nodejs.org/es/)
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node-dot-js&logoColor=white" /> 
+<img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" />
 
 ## Installation
 
@@ -115,13 +120,13 @@ PORT=3005
 Run the Application in development mode :
 
 ```bash
-$ git clone https://github.com/alejandrogalaz21/js-babel-node
+$ git clone https://github.com/llanesleonardo/api-employees.git
 $ cd ../path/to/the/file
-$ yarn
-$ yarn dev
+$ npm
+$ npm start
 ```
 
-Run the aplication in debug :bug: mode in [Visual Studio Code](https://code.visualstudio.com/) :
+Run the aplication in debug mode in [Visual Studio Code](https://code.visualstudio.com/) :
 
 Create your Visual Studio Code config file .vscode/launch.json
 
