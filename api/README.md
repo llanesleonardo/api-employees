@@ -234,7 +234,7 @@ Create your .prettierrc file :
 See : https://www.npmjs.com/package/nodemon
 
 ```bash
-$ yarn add nodemon -D
+$ npm i nodemon -D
 ```
 
 ### Configure Babel for a Nodejs Application
@@ -242,8 +242,9 @@ $ yarn add nodemon -D
 See : https://dev.to/adebayoileri/configure-babel-for-nodejs-application-3798
 
 ```bash
-$ yarn add @babel/cli @babel/core @babel/node @babel/plugin-transform-runtime
-$ yarn add @babel/polyfill @babel/preset-env @babel/runtime
+$ npm i --save-dev @babel/cli @babel/core
+
+$ npm i --save-dev @babel/polyfill @babel/preset-env @babel/runtime @babel/node @babel/plugin-transform-runtime
 ```
 
 Create your .babelrc file :
@@ -268,7 +269,7 @@ See : https://jestjs.io/docs/getting-started
 To use Babel, install required dependencies via yarn:
 
 ```bash
-$ yarn add jest babel-jest -D
+$ npm i jest babel-jest -D
 ```
 
 Based on your project, Jest will ask you a few questions and will create a basic configuration file with a short description for each option:
@@ -284,7 +285,7 @@ Dotenv is a zero-dependency module that loads environment variables from a .env 
 See : https://www.npmjs.com/package/dotenv
 
 ```bash
-$ yarn add dotenv
+$ npm i dotenv
 ```
 
 ### Install chalk for logs
@@ -292,7 +293,7 @@ $ yarn add dotenv
 See : https://www.npmjs.com/package/chalk
 
 ```bash
-$ yarn add chalk
+$ npm i chalk
 ```
 
 ### Mongoose
@@ -307,94 +308,45 @@ See : https://github.com/azat-co/cheatsheets/blob/master/mongodb-mongoose/readme
 $ yarn add mongoose
 ```
 
+### typeORM
+
+Docs : https://typeorm.io/#/
+
+npm : hhttps://www.npmjs.com/package/typeorm
+
+```bash
+$ npm install typeorm --save
+$ npm install reflect-metadata --save
+$ import reflect-metadata -> app.js
+$ npm install @types/node --save-dev
+```
+
+Install a typeORM database driver
+
+MySQL npm install mysql2 --save
+MongoDB npm install mongodb@^3.6.0 --save
+
 Basic CRUD Example :
 
 ```js
-// Create
-const post = new Post({title: 'a', text: 'b')
-post.save(function(error, document){
-  ...
-})
-
-
-// Read
-Post.findOne(criteria, function(error, post) {
-  ...
-})
-
-// Update
-Post.findOne(criteria, function(error, post) {
-  post.set()
-  post.save(function(error, document){
-    ...
-  })
-})
-
-// Delete
-Post.findOne(criteria, function(error, post) {
-  post.remove(function(error){
-    ...
-  })
-})
-
+//ROUTES
 ```
 
-Service example :
-
 ```js
-//get all users
-export const getAllUsers = async () => {
-  const data = await User.find();
-  return data;
-};
-
-//create new user
-export const newUser = async (body) => {
-  const data = await User.create(body);
-  return data;
-};
-
-//update single user
-export const updateUser = async (_id, body) => {
-  const data = await User.findByIdAndUpdate(
-    {
-      _id,
-    },
-    body,
-    {
-      new: true,
-    }
-  );
-  return data;
-};
-
-//delete single user
-export const deleteUser = async (id) => {
-  await User.findByIdAndDelete(id);
-  return "";
-};
-
-//get single user
-export const getUser = async (id) => {
-  const data = await User.findById(id);
-  return data;
-};
+//CONTROLLERS
 ```
 
-Controller Example :
+```js
+//SERVICES
+```
 
 ```js
-
+//ENTITY
 ```
 
 # Refs :
 
-- https://www.toptal.com/developers/gitignore
-- https://www.markdownguide.org/basic-syntax/
-- https://gist.github.com/rxaviers/7360908
-- https://github.com/Naereen/badges/blob/master/README.md
-- https://shields.io/
-- https://github.com/alexandresanlim/Badges4-README.md-Profile
+- https://github.com/alejandrogalaz21
 
 # Bugs and feature requests
 

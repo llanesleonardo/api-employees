@@ -4,7 +4,8 @@
   "description": "API with CRUD functions",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "start": ""
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,24 @@
   },
   "homepage": "https://github.com/llanesleonardo/api-empleados#readme",
   "devDependencies": {
+    "@babel/node": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/runtime": "^7.16.3",
+    "babel-jest": "^27.4.4",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.4",
+    "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "chalk": "^5.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
   }
 }
