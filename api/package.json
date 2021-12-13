@@ -1,0 +1,25 @@
+{
+  "name": "api-empleados",
+  "version": "1.0.0",
+  "description": "API with CRUD functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llanesleonardo/api-employees.git"
+  },
+  "keywords": [
+    "expressjs",
+    "typeorm",
+    "node",
+    "javascript"
+  ],
+  "author": "Leonardo Ernesto LLanes Hoyos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llanesleonardo/api-employees/issues"
+  },
+  "homepage": "https://github.com/llanesleonardo/api-empleados#readme"
+}
