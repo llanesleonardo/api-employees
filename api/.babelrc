@@ -1,10 +1,39 @@
+/*
+ * @presets and @plugins  are a definitions that allows us to use the latest JavaScript without needing to micromanage th syntax
+ * @plugins are loaded before presets
+ * @module-resolver This plugin allows you to add new "root" directories that contain your modules. It also allows you to setup a custom alias for directories, specific files, or even other npm modules.
+ * @decorators is an attribute that contains a value like this "@config": "./src/config", this is a solution for long and boring url imports
+*/
 {
-    "presets": ["@babel/preset-env"],
-    "plugins": [["@babel/transform-runtime"]],
-    "env": {
-      "debug": {
-        "sourceMaps": "inline",
-        "retainLines": true
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    ["@babel/transform-runtime"],
+    ["@babel/plugin-proposal-decorators",{"legacy":true}],
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "@config": "./src/config",
+          "@middlewares": "./src/middlewares",
+          "@routes": "./src/routes",
+          "@entities": "./src/entity",
+          "@model": "./src/model",
+          "@controllers": "./src/controllers",
+          "@services": "./src/services",
+          "@helpers": "./src/helpers",
+          "@errors": "./src/errors",
+          "@validations": "./src/validations",
+          "@tests": "./src/tests",
+          "@app": "./src/app.js"
+        }
       }
+    ]
+  ],
+  "env": {
+    "debug": {
+      "sourceMaps": "inline",
+      "retainLines": true
     }
   }
+}
