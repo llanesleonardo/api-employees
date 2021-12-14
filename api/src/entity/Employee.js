@@ -17,18 +17,18 @@ export class Employee {
   lastname = ''
   @Column('varchar')
   email = ''
-  @Column('varchar')
-  department = ''
-  @Column('varchar')
-  position = ''
+  @Column('int')
+  department = 0
+  @Column('int')
+  position = 0
   @Column('varchar')
   creationDate = ''
   @Column('varchar')
   modificationDate = ''
   @Column('varchar')
   mobile = ''
-  @Column('boolean')
-  active = ''
+  @Column('int')
+  active = 0
   @Column('varchar')
   urlPhoto = ''
 }

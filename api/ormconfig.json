@@ -1,0 +1,27 @@
+[
+  {
+    "name": "development",
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306 ,
+    "username": "root" ,
+    "password": "test123" ,
+    "database": "employees" ,
+    "entities": ["src/entity/**/*.js"],
+    "synchronize": true,
+    "logging": true
+  },
+  {
+    "name": "test",
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306 ,
+    "username": "root" ,
+    "password": "test123" ,
+    "database": "employee_test" ,
+    "entities": ["src/entity/**/*.js"],
+    "synchronize": true,
+    "dropSchema": true,
+    "logging": false
+  }
+]

@@ -1,18 +1,23 @@
 import { responseFormat } from '@helpers/format.helpers'
-import { show } from '@services/employees.services'
+import { validId } from '@services/employees.services'
 
-export async function isValidId(id) {
+export async function isValidId(req, res, next) {
   try {
-    const objectId = await show(id)
-    if (!objectId) {
+    const { id } = req.params
+    const employee = await validId(id)
+    console.log('employeeId ' + JSON.stringify(employee))
+    if (!employee) {
       const response = responseFormat(
         400,
-        { errors: errors.array() },
-        'Problema con la consulta en la base de datos'
+        { errors: 'id no encontrado' },
+        'Los datos son erroneos'
       )
 
       return res.status(400).json(response)
     }
+
     next()
-  } catch (e) {}
+  } catch (e) {
+    console.error(e.stack)
+  }
 }

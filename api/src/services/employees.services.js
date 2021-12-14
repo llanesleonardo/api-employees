@@ -1,22 +1,26 @@
 import { getRepository, getConnection } from 'typeorm'
-import { Employee } from '../entity/Employee'
+import { Employee } from '@entities/Employee'
 /**
  * @getPhotoRepository get a specific repositor, similar to use a specific schema or table in the database
  */
 
-function getPhotoRepository() {
-  try {
-    return getConnection().getRepository(Employee)
-  } catch (e) {}
-}
-
 /**
  * @index fetch all documents
  */
+export async function validId(id) {
+  try {
+    return await getConnection().getRepository(Employee).findOne(id)
+  } catch (e) {
+    console.error(e.stack)
+  }
+}
+
 export async function index() {
   try {
-    return await getPhotoRepository().find()
-  } catch (e) {}
+    return await getConnection().getRepository(Employee).find()
+  } catch (e) {
+    console.error(e.stack)
+  }
 }
 /**
  * @show fetch only one document
@@ -24,8 +28,10 @@ export async function index() {
  */
 export async function show(id) {
   try {
-    return await getPhotoRepository().findOne(id)
-  } catch (e) {}
+    return await getConnection().getRepository(Employee).findOne(id)
+  } catch (e) {
+    console.error(e.stack)
+  }
 }
 /**
  * @store crete a document an then save that document into db
@@ -46,20 +52,21 @@ export async function store(
   try {
     const employee = new Employee()
 
-    ;(employee.name = name),
-      (employee.lastname = lastname),
-      (employee.email = email),
-      (employee.department = department),
-      (employee.position = position),
-      (employee.creationDate = creationDate),
-      (employee.modificationDate = modificationDate),
-      (employee.mobile = mobile),
-      (employee.active = active),
-      (employee.urlPhoto = urlPhoto)
-
+    employee.name = name
+    employee.lastname = lastname
+    employee.email = email
+    employee.department = department
+    employee.position = position
+    employee.creationDate = creationDate
+    employee.modificationDate = modificationDate
+    employee.mobile = mobile
+    employee.active = active
+    employee.urlPhoto = urlPhoto
     // let photo = await getPhotoRepository().create(payload)
-    return await getPhotoRepository().save(employee)
-  } catch (e) {}
+    return await getConnection().getRepository(Employee).save(employee)
+  } catch (e) {
+    console.error(e.stack)
+  }
 }
 /**
  * @update fetch one document, merge with the old same document and then save it into db
@@ -80,7 +87,9 @@ export async function update(
   urlPhoto
 ) {
   try {
-    let photoToUpdate = await getPhotoRepository().findOne(id)
+    let employeeToUpdate = await getConnection()
+      .getRepository(Employee)
+      .findOne(id)
     let payload = {
       name,
       lastname,
@@ -93,9 +102,11 @@ export async function update(
       active,
       urlPhoto
     }
-    getRepository('photos').merge(photoToUpdate, payload)
-    return await getPhotoRepository().save(photoToUpdate)
-  } catch (e) {}
+    getRepository(Employee).merge(employeeToUpdate, payload)
+    return await getConnection().getRepository(Employee).save(employeeToUpdate)
+  } catch (e) {
+    console.error(e.stack)
+  }
 }
 
 /**
@@ -104,6 +115,8 @@ export async function update(
  */
 export async function destroy(id) {
   try {
-    return await getPhotoRepository().delete(id)
-  } catch (e) {}
+    return await getConnection().getRepository(Employee).delete(id)
+  } catch (e) {
+    console.error(e.stack)
+  }
 }

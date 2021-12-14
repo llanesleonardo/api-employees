@@ -4,6 +4,7 @@ import app from '@app' // // This npm module import the method app
 //import chalk from 'chalk' // This npm module import the method chalk
 import { getEnv } from '@config/env' // This custom module import the method getEnv
 import { createConnection } from 'typeorm' // This npm module import the method createConnection
+import { createTypeORMConnection } from './config/connectionTypeORM'
 
 /**
  * @destructuring of the getEnv() function to get enviromental variables from .env file (this only works on development mode)
@@ -22,8 +23,24 @@ const PORT = process.env.PORT || PORT_NODE
  * @param  {} PORT
  * @typeConn variable that create a connection to the typeORM Entities and Schemas (only one connection need it)
  */
-http.Server(app).listen(PORT, () => {
+
+export async function startServer() {
   try {
+    app.listen(PORT)
+    await createTypeORMConnection()
+    console.log(
+      'Express server listening on port ' + PORT + ' ' + process.env.NODE_ENV
+    )
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+startServer()
+/**
+app.listen(PORT, () => {
+  try {
+    const connection = await createConnection()
     // console.log(chalk.green('DB CONNECTED '))
     // console.log(chalk.green('Server started 1:'))
     console.log(`Api started at : http://localhost:${PORT}/api`)
@@ -31,3 +48,5 @@ http.Server(app).listen(PORT, () => {
     console.error(error)
   }
 })
+
+ */
